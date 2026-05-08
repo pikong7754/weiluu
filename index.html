@@ -3,678 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>南京微路文化传媒有限公司 | Weilu Media</title>
-    <meta name="description" content="南京微路文化传媒有限公司 - 专注于数字内容创作、品牌传播与整合营销的国际文化传媒机构">
-    <meta name="keywords" content="文化传媒,品牌传播,数字营销,内容创作,南京">
-    <link rel="icon" type="image/png" href="logo.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --text: #333;
-            --text-light: #666;
-            --white: #fff;
-            --gray-bg: #f8f9fa;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-        }
-        /* Header */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .header-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-area img {
-            height: 50px;
-            width: auto;
-            border-radius: 8px;
-        }
-        .logo-text {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        .logo-text span {
-            color: var(--highlight);
-        }
-        nav {
-            display: flex;
-            gap: 40px;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: var(--highlight);
-        }
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--secondary) 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 40px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
-        .hero h1 {
-            color: var(--white);
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-        .hero h1 span {
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero p {
-            color: rgba(255,255,255,0.85);
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-        .hero-btn {
-            display: inline-block;
-            background: var(--highlight);
-            color: var(--white);
-            padding: 18px 48px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 40px rgba(233,69,96,0.4);
-        }
-        .hero-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(233,69,96,0.5);
-        }
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            margin-top: 80px;
-            padding-top: 60px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .stat {
-            text-align: center;
-        }
-        .stat-number {
-            color: var(--white);
-            font-size: 3rem;
-            font-weight: 800;
-        }
-        .stat-label {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            margin-top: 8px;
-        }
-        /* Sections */
-        section {
-            padding: 120px 40px;
-        }
-        .section-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .section-header h2 {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        /* About */
-        .about {
-            background: var(--gray-bg);
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .about-content h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        .about-content p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-        }
-        .about-image {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 4rem;
-        }
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid #eee;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-        }
-        .service-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        /* Team */
-        .team {
-            background: var(--gray-bg);
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-        .team-card {
-            text-align: center;
-        }
-        .team-avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--white);
-        }
-        .team-card h4 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        .team-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        /* Clients */
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 40px;
-            align-items: center;
-        }
-        .client-logo {
-            background: var(--gray-bg);
-            border-radius: 12px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ccc;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        /* Contact */
-        .contact {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-        .contact .section-header h2 {
-            color: var(--white);
-        }
-        .contact .section-header p {
-            color: rgba(255,255,255,0.7);
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        .contact-item {
-            background: rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .contact-item h4 {
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-        .contact-item p {
-            color: rgba(255,255,255,0.8);
-            font-size: 1rem;
-        }
-        .contact-item a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-        .contact-item a:hover {
-            color: var(--white);
-        }
-        /* Footer */
-        footer {
-            background: var(--primary);
-            padding: 60px 40px 30px;
-        }
-        .footer-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 50px;
-        }
-        .footer-brand h3 {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        .footer-brand p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-        .footer-links h4 {
-            color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-        .footer-links a {
-            display: block;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover {
-            color: var(--white);
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            text-align: center;
-        }
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-        .footer-bottom a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-        }
-        .footer-bottom a:hover {
-            color: var(--white);
-        }
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .services-grid, .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .clients-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 768px) {
-            .header-inner {
-                padding: 0 20px;
-            }
-            nav {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .hero-stats {
-                flex-direction: column;
-                gap: 30px;
-            }
-            section {
-                padding: 80px 20px;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .services-grid, .team-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-    </style>
+    <meta name="description" content="南京微路文化传媒有限公司 - 专业的文化传媒服务提供商，专注于品牌策划、视频制作、新媒体运营、活动策划等全方位文化传播服务">
+    <meta name="keywords" content="文化传媒,品牌策划,视频制作,新媒体运营,活动策划,南京传媒公司">
+    <meta name="author" content="南京微路文化传媒有限公司">
+    <title>南京微路文化传媒有限公司 | Nanjing Weilu Culture Media Co., Ltd.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="logo-area">
-                <img src="logo.png" alt="微路传媒" onerror="this.style.display='none'">
-                <div class="logo-text">微路<span>传媒</span></div>
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <span class="logo-icon">微</span>
+                        <span class="logo-text">微路传媒</span>
+                    </div>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home" class="nav-link active">首页</a></li>
+                        <li><a href="#about" class="nav-link">关于我们</a></li>
+                        <li><a href="#services" class="nav-link">业务范围</a></li>
+                        <li><a href="#projects" class="nav-link">案例展示</a></li>
+                        <li><a href="#team" class="nav-link">团队介绍</a></li>
+                        <li><a href="#contact" class="nav-link">联系我们</a></li>
+                    </ul>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </div>
-            <nav>
-                <a href="#home">首页</a>
-                <a href="#about">关于我们</a>
-                <a href="#services">服务项目</a>
-                <a href="#team">核心团队</a>
-                <a href="#contact">联系我们</a>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>以创意为翼 <span>赋能品牌增长</span></h1>
-            <p>专注于数字内容创作、品牌传播与整合营销的国际文化传媒机构</p>
-            <a href="#contact" class="hero-btn">开启合作</a>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">年行业深耕</div>
+    <!-- Hero区域 -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">用文化的力量</span>
+                    <span class="title-line highlight">连接每一条道路</span>
+                </h1>
+                <p class="hero-subtitle">南京微路文化传媒有限公司 - 专注于为品牌创造价值的综合性文化传媒机构</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">了解我们的服务</a>
+                    <a href="#contact" class="btn btn-outline">联系我们</a>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">服务客户</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>向下滚动探索更多</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">关于我们</h2>
+                <p class="section-subtitle">About Weilu Culture Media</p>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>微路传媒 - 文化传播的践行者</h3>
+                    <p>南京微路文化传媒有限公司（Nanjing Weilu Culture Media Co., Ltd.）成立于文化创意产业蓬勃发展的时代，是一家专注于品牌传播与文化创意的综合性文化传媒公司。</p>
+                    <p>我们秉承"用文化连接世界"的理念，致力于为客户提供从品牌策略到创意执行的全链路服务，帮助企业在数字化时代建立独特的品牌形象和市场竞争力。</p>
+                    <p>经过多年的发展，我们已服务超过100家企业客户，涵盖政府机构、金融、教育、零售、科技等多个行业领域，积累了丰富的项目经验和行业资源。</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">服务客户</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">成功项目</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">行业覆盖</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">1000+</div>
-                    <div class="stat-label">成功案例</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">专业团队</div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-building"></i>
+                        <p>专业团队 · 创新服务</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about" id="about">
-        <div class="section-inner">
+    <!-- 我们的价值观 -->
+    <section class="values section bg-light">
+        <div class="container">
             <div class="section-header">
-                <h2>关于我们</h2>
-                <p>深耕文化传媒领域，以专业铸就品质</p>
+                <h2 class="section-title">我们的价值观</h2>
+                <p class="section-subtitle">Our Core Values</p>
+                <div class="divider"></div>
             </div>
-            <div class="about-grid">
-                <div class="about-content">
-                    <h3>南京微路文化传媒有限公司</h3>
-                    <p>成立于2014年，是一家专注于数字内容创作、品牌传播与整合营销的文化传媒机构。公司总部位于南京，业务覆盖全国，服务客户涵盖互联网、金融、消费品、教育等多个行业领域。</p>
-                    <p>我们拥有一支经验丰富、充满创意的专业团队，致力于为客户提供从策略规划到执行落地的一站式营销解决方案。以数据驱动创意，以技术赋能传播，帮助品牌在数字化时代实现价值最大化。</p>
-                    <p>秉承"创新、专业、共赢"的理念，微路传媒已成为众多知名品牌的长期合作伙伴，持续为客户创造价值，推动行业创新发展。</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>创新思维</h3>
+                    <p>我们相信创新是推动行业发展的核心动力，持续探索新的表达方式和技术手段。</p>
                 </div>
-                <div class="about-image" style="background: linear-gradient(135deg, #fff, #f0f0f0);">
-                    <img src="logo.png" alt="微路传媒" style="height: 200px; border-radius: 20px;">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>诚信为本</h3>
+                    <p>以诚待人，以信立业，我们珍视与每一位客户的长期合作关系。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>团队协作</h3>
+                    <p>专业的团队配合是项目成功的保障，每个人的才华都能在这里得到充分发挥。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>追求卓越</h3>
+                    <p>不满足于现状，持续超越自我，为客户交付超出预期的优质成果。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <div class="section-inner">
+    <!-- 业务范围 -->
+    <section id="services" class="services section">
+        <div class="container">
             <div class="section-header">
-                <h2>服务项目</h2>
-                <p>全方位营销解决方案，助力品牌价值提升</p>
+                <h2 class="section-title">业务范围</h2>
+                <p class="section-subtitle">Our Services</p>
+                <div class="divider"></div>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>品牌策略</h3>
-                    <p>深度洞察市场与用户，为品牌制定差异化战略定位，构建可持续发展的品牌价值体系。</p>
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>品牌策划</h3>
+                    <p>品牌定位、品牌视觉设计、品牌策略规划，帮助企业建立独特的品牌形象和识别系统。</p>
+                    <ul class="service-list">
+                        <li>品牌战略咨询</li>
+                        <li>VI视觉设计</li>
+                        <li>品牌手册制作</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>内容创作</h3>
-                    <p>专业内容团队，涵盖图文、视频、动画等多种形式，打造高质量原创内容矩阵。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>社交媒体运营</h3>
-                    <p>全平台社交账号代运营，从内容策划到粉丝互动，提升品牌社交影响力。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎥</div>
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
                     <h3>视频制作</h3>
-                    <p>从创意脚本到后期制作，提供企业宣传片、广告片、短视频等全流程视频服务。</p>
+                    <p>企业宣传片、产品视频、短视频内容创作，用影像讲述品牌故事，传递核心价值。</p>
+                    <ul class="service-list">
+                        <li>企业宣传片</li>
+                        <li>产品展示视频</li>
+                        <li>短视频运营</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>数据分析</h3>
-                    <p>基于大数据分析，精准洞察用户行为，优化营销策略，提升投放ROI。</p>
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>新媒体运营</h3>
+                    <p>微信公众号、微博、抖音等平台的内容策划与运营，助力品牌数字化传播。</p>
+                    <ul class="service-list">
+                        <li>内容创作</li>
+                        <li>社群运营</li>
+                        <li>数据分析</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🎪</div>
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
                     <h3>活动策划</h3>
-                    <p>线上线下活动全案策划执行，发布会、路演、展览等大型活动专业承办。</p>
+                    <p>各类商业活动、发布会、年会、展览展示的策划与执行，打造难忘的活动体验。</p>
+                    <ul class="service-list">
+                        <li>活动策划执行</li>
+                        <li>场地布置</li>
+                        <li>流程管理</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>整合营销</h3>
-                    <p>多渠道资源整合，打通线上线下传播链路，实现品牌营销效果最大化。</p>
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>平面设计</h3>
+                    <p>海报、画册、包装等各类平面设计服务，用视觉语言传递品牌信息。</p>
+                    <ul class="service-list">
+                        <li>宣传物料设计</li>
+                        <li>产品包装设计</li>
+                        <li>出版物设计</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💡</div>
-                    <h3>创意设计</h3>
-                    <p>专业设计团队，提供VI设计、UI设计、平面设计等全方位视觉创意服务。</p>
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>营销推广</h3>
+                    <p>整合线上线下资源，制定精准的营销策略，帮助品牌实现商业目标。</p>
+                    <ul class="service-list">
+                        <li>整合营销</li>
+                        <li>广告投放</li>
+                        <li>效果监测</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="team" id="team">
-        <div class="section-inner">
+    <!-- 案例展示 -->
+    <section id="projects" class="projects section bg-light">
+        <div class="container">
             <div class="section-header">
-                <h2>核心团队</h2>
-                <p>资深行业专家，引领创新发展</p>
+                <h2 class="section-title">案例展示</h2>
+                <p class="section-subtitle">Our Portfolio</p>
+                <div class="divider"></div>
             </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>城市品牌推广项目</h3>
+                        <p>为某城市旅游局打造的城市品牌形象推广项目，涵盖视觉设计、视频制作、新媒体运营等全案服务。</p>
+                        <div class="project-tags">
+                            <span>品牌策划</span>
+                            <span>视频制作</span>
+                            <span>新媒体</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>教育机构品牌升级</h3>
+                        <p>协助知名教育机构完成品牌升级，包括品牌定位重塑、VI系统设计、宣传物料制作等。</p>
+                        <div class="project-tags">
+                            <span>品牌升级</span>
+                            <span>VI设计</span>
+                            <span>教育行业</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>零售企业年度活动</h3>
+                        <p>为连锁零售企业策划执行全年营销活动，包括节日促销、新品发布、会员活动等。</p>
+                        <div class="project-tags">
+                            <span>活动策划</span>
+                            <span>营销推广</span>
+                            <span>零售行业</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>科技公司宣传片</h3>
+                        <p>为人工智能科技公司制作企业宣传片，从脚本策划到后期制作，展现科技创新实力。</p>
+                        <div class="project-tags">
+                            <span>视频制作</span>
+                            <span>宣传片</span>
+                            <span>科技行业</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team" class="team section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">团队介绍</h2>
+                <p class="section-subtitle">Our Team</p>
+                <div class="divider"></div>
+            </div>
+            <p class="team-intro">我们拥有一支充满激情与创造力的专业团队，成员来自广告、媒体、设计、营销等多个领域，平均拥有5年以上行业经验。</p>
             <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">👔</div>
-                    <h4>创始人 & CEO</h4>
-                    <p>15年传媒行业经验</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">🎨</div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
                     <h4>创意总监</h4>
-                    <p>国际4A广告公司背景</p>
+                    <p class="member-role">Creative Director</p>
+                    <p class="member-desc">10年广告行业经验，曾服务多家知名品牌，擅长品牌策略与创意把控。</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-avatar">📈</div>
-                    <h4>策略总监</h4>
-                    <p>品牌战略咨询专家</p>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>设计总监</h4>
+                    <p class="member-role">Design Director</p>
+                    <p class="member-desc">8年视觉设计经验，作品多次获得行业奖项，对视觉美学有独特见解。</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-avatar">🎬</div>
-                    <h4>制作总监</h4>
-                    <p>资深影视制作人</p>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>视频总监</h4>
+                    <p class="member-role">Video Director</p>
+                    <p class="member-desc">资深影视制作人，执导过多部知名企业宣传片，精通影视制作全流程。</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>运营总监</h4>
+                    <p class="member-role">Operation Director</p>
+                    <p class="member-desc">新媒体运营专家，擅长内容策划与数据分析，帮助品牌实现数字化增长。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="clients">
-        <div class="section-inner">
+    <!-- 联系我们 -->
+    <section id="contact" class="contact section bg-light">
+        <div class="container">
             <div class="section-header">
-                <h2>合作伙伴</h2>
-                <p>与众多知名品牌携手共创价值</p>
+                <h2 class="section-title">联系我们</h2>
+                <p class="section-subtitle">Contact Us</p>
+                <div class="divider"></div>
             </div>
-            <div class="clients-grid">
-                <div class="client-logo">合作伙伴</div>
-                <div class="client-logo">合作伙伴</div>
-                <div class="client-logo">合作伙伴</div>
-                <div class="client-logo">合作伙伴</div>
-                <div class="client-logo">合作伙伴</div>
-                <div class="client-logo">合作伙伴</div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>与我们取得联系</h3>
+                    <p>无论您有任何问题或合作意向，我们都期待与您沟通。您可以通过以下方式联系我们，我们会在24小时内回复您。</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>公司地址</h4>
+                                <p>江苏省南京市建邺区河西商务中心</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>联系电话</h4>
+                                <p>+86 13376079411</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>电子邮箱</h4>
+                                <p>master@weiluu.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>工作时间</h4>
+                                <p>周一至周五 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">您的姓名</label>
+                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">电子邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话</label>
+                            <input type="tel" id="phone" name="phone" placeholder="请输入您的电话">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容</label>
+                            <textarea id="message" name="message" placeholder="请输入您的留言内容" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送留言</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="section-inner">
-            <div class="section-header">
-                <h2>联系我们</h2>
-                <p>期待与您的每一次合作</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <h4>公司地址</h4>
-                    <p>江苏省南京市</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <h4>电子邮箱</h4>
-                    <p>contact@weilu.media</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <h4>联系电话</h4>
-                    <p>400-XXX-XXXX</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-grid">
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>微路传媒</h3>
-                    <p>专注于数字内容创作、品牌传播与整合营销的国际文化传媒机构。以创意为翼，赋能品牌增长。</p>
+                    <div class="logo">
+                        <span class="logo-icon">微</span>
+                        <span class="logo-text">微路传媒</span>
+                    </div>
+                    <p>南京微路文化传媒有限公司 - 专注于为品牌创造价值的综合性文化传媒机构。用文化的力量，连接每一条道路。</p>
+                    <div class="footer-social">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" title="抖音"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>服务</h4>
-                    <a href="#services">品牌策略</a>
-                    <a href="#services">内容创作</a>
-                    <a href="#services">视频制作</a>
-                    <a href="#services">整合营销</a>
+                <div class="footer-column">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">业务范围</a></li>
+                        <li><a href="#projects">案例展示</a></li>
+                    </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>公司</h4>
-                    <a href="#about">关于我们</a>
-                    <a href="#team">核心团队</a>
-                    <a href="#contact">联系我们</a>
+                <div class="footer-column">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">品牌策划</a></li>
+                        <li><a href="#">视频制作</a></li>
+                        <li><a href="#">新媒体运营</a></li>
+                        <li><a href="#">活动策划</a></li>
+                    </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>关注我们</h4>
-                    <a href="#">微信公众号</a>
-                    <a href="#">微博</a>
-                    <a href="#">抖音</a>
+                <div class="footer-column">
+                    <h4>法律信息</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 南京微路文化传媒有限公司 版权所有 | <a href="https://beian.miit.gov.cn/" target="_blank">苏ICP备14050789号-2</a></p>
+                <p>&copy; 2024 南京微路文化传媒有限公司 Nanjing Weilu Culture Media Co., Ltd. 保留所有权利。</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
